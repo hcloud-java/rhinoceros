@@ -19,6 +19,4 @@ dependencies {
     implementation("io.prometheus:simpleclient:0.16.0")
     implementation("io.prometheus:simpleclient_hotspot:0.16.0")
     implementation("io.prometheus:simpleclient_spring_boot:0.16.0")
-    implementation("org.springframework.boot:spring-boot-starter-actuator")
-
 }
