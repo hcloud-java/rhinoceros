@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean
 
-
 @EnableConfigurationProperties(OssProperties::class)
 open class OssAutoConfiguration(private val properties: OssProperties) {
 

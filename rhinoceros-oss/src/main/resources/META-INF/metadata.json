@@ -43,7 +43,7 @@
       "defaultValue": ""
     },
     {
-      "name": "oss.max_monnections",
+      "name": "oss.max_connections",
       "type": "java.lang.Integer",
       "description": ".",
       "defaultValue": 100

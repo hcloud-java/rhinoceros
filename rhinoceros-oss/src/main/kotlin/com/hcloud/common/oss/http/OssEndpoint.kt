@@ -69,9 +69,6 @@ class OssEndpoint(private val template: OssTemplate) {
 
     /**
      * 上传图片
-     * date: 11:30 AM 2021/8/9
-     *
-     * @author houshuai
      */
     @PostMapping("/object/{bucketName}/{subDic}/{objectName}")
     fun createObject(

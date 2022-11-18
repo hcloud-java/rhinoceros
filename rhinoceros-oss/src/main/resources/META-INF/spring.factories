@@ -1,2 +1,3 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-    com.hcloud.common.oss.OssAutoConfiguration
+    com.hcloud.common.oss.OssAutoConfiguration,\
+    com.hcloud.common.oss.OssProperties
