@@ -1,4 +1,4 @@
-package com.hcloud.prometheus.annotation
+package com.hcloud.common.prometheus.annotation
 
 import java.lang.annotation.Inherited
 
@@ -9,7 +9,7 @@ import java.lang.annotation.Inherited
 @Target(AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.RUNTIME)
 @Inherited
-annotation class Monitor(
+annotation class Tp(
     /**
      * It's description for the indicator that tell developer how to understand.
      * */

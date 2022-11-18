@@ -1,6 +1,6 @@
-package com.hcloud.prometheus
+package com.hcloud.common.prometheus
 
-import com.hcloud.prometheus.metrix.Matrix
+import com.hcloud.common.prometheus.metrix.Matrix
 import io.micrometer.core.instrument.MeterRegistry
 import org.springframework.boot.actuate.autoconfigure.metrics.MeterRegistryCustomizer
 import org.springframework.context.annotation.Bean

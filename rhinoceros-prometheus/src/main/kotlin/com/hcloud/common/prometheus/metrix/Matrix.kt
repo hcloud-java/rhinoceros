@@ -1,4 +1,4 @@
-package com.hcloud.prometheus.metrix
+package com.hcloud.common.prometheus.metrix
 
 import io.micrometer.core.instrument.Meter
 import io.micrometer.core.instrument.MeterRegistry

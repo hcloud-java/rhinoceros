@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-    com.hcloud.common.prometheus.PrometheusAutoConfiguration
+    com.hcloud.prometheus.PrometheusAutoConfiguration
