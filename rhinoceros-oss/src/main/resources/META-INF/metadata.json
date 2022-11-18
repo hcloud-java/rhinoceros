@@ -1,0 +1,52 @@
+{
+  "properties": [
+    {
+      "name": "oss.endpoint",
+      "type": "java.lang.String",
+      "description": "oss store url path.",
+      "defaultValue": "http://localhost:7892"
+    },
+    {
+      "name": "oss.custom_domain",
+      "type": "java.lang.String",
+      "description": "custom domain url.",
+      "defaultValue": ""
+    },
+    {
+      "name": "oss.app_id",
+      "type": "java.lang.String",
+      "description": ".",
+      "defaultValue": ""
+    },
+    {
+      "name": "oss.region",
+      "type": "java.lang.String",
+      "description": ".",
+      "defaultValue": ""
+    },
+    {
+      "name": "oss.access_key",
+      "type": "java.lang.String",
+      "description": ".",
+      "defaultValue": ""
+    },
+    {
+      "name": "oss.secret_key",
+      "type": "java.lang.String",
+      "description": ".",
+      "defaultValue": ""
+    },
+    {
+      "name": "oss.bucket_name",
+      "type": "java.lang.String",
+      "description": ".",
+      "defaultValue": ""
+    },
+    {
+      "name": "oss.max_monnections",
+      "type": "java.lang.Integer",
+      "description": ".",
+      "defaultValue": 100
+    }
+  ]
+}

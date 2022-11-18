@@ -10,4 +10,6 @@ tasks.getByName<Jar>("jar") {
 }
 
 dependencies {
+    api("com.amazonaws:aws-java-sdk-s3:1.12.344")
+    implementation("org.springframework.boot:spring-boot-starter-web")
 }
