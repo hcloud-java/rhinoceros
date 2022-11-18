@@ -14,5 +14,4 @@ annotation class Monitor(
      * It's description for the indicator that tell developer how to understand.
      * */
     val description: String = ""
-
 )

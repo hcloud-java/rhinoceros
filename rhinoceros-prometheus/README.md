@@ -1,6 +1,5 @@
-# Prometheus
-
-expose all endpoint and add tags metrics 
+# [Prometheus](https://micrometer.io/docs/registry/prometheus)
+expose all endpoint and add tags metrics
 
 ```yaml
 management:
