@@ -77,10 +77,12 @@ tasks.register<Copy>("installGitHook") {
     from(layout.projectDirectory.file("gradle/scripts/pre-commit-$suffix"))
     into(layout.projectDirectory.file(".git/hooks"))
     rename("pre-commit-$suffix", "pre-commit")
+    fileMode = 0b111101101
 
     from(layout.projectDirectory.file("gradle/scripts/pre-push-$suffix"))
     into(layout.projectDirectory.file(".git/hooks"))
     rename("pre-push-$suffix", "pre-push")
+    fileMode = 0b111101101
 }
 
 tasks.getByName("compileKotlin").dependsOn(tasks.getByName("installGitHook"))
