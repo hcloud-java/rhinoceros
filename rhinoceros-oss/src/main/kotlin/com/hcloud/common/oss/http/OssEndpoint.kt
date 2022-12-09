@@ -60,8 +60,9 @@ class OssEndpoint(private val template: OssTemplate) {
      */
     @PostMapping("/object/{bucketName}/{objectName}")
     fun createObject(
-        @RequestBody file: MultipartFile, @PathVariable bucketName: String?,
-        @PathVariable objectName: String?
+        @RequestBody file: MultipartFile,
+        @PathVariable bucketName: String?,
+        @PathVariable objectName: String?,
     ): S3Object? {
         template.putObject(bucketName, objectName, file.inputStream, file.size, file.contentType)
         return template.getObjectInfo(bucketName, objectName)
@@ -71,17 +72,14 @@ class OssEndpoint(private val template: OssTemplate) {
      * 上传图片
      */
     @PostMapping("/object/{bucketName}/{subDic}/{objectName}")
-    fun createObject(
-        @RequestBody file: MultipartFile, @PathVariable bucketName: String, @PathVariable subDic: String,
-        @PathVariable objectName: String?
-    ): S3Object? {
+    fun createObject(@RequestBody file: MultipartFile, @PathVariable bucketName: String, @PathVariable subDic: String, @PathVariable objectName: String?): S3Object? {
         val subBuckName = "$bucketName/$subDic"
         template.putObject(
             subBuckName,
             objectName,
             file.inputStream,
             file.size,
-            file.contentType
+            file.contentType,
         )
         return template.getObjectInfo(subBuckName, objectName)
     }
@@ -98,11 +96,8 @@ class OssEndpoint(private val template: OssTemplate) {
      * 获取图片内容
      */
     @GetMapping("/object/{bucketName}/{objectName}/{expires}")
-    fun getObject(
-        @PathVariable bucketName: String?, @PathVariable objectName: String?,
-        @PathVariable expires: Int?
-    ): Map<String, Any?> {
-        val responseBody = HashMap<String, Any?>();
+    fun getObject(@PathVariable bucketName: String?, @PathVariable objectName: String?, @PathVariable expires: Int?): Map<String, Any?> {
+        val responseBody = HashMap<String, Any?>()
         responseBody["bucket"] = bucketName
         responseBody["object"] = objectName
         responseBody["url"] = template.getObjectURL(bucketName, objectName, expires)

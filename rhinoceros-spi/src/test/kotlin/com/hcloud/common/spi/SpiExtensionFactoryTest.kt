@@ -1,7 +1,6 @@
 package com.hcloud.common.spi
 import org.junit.Test
 
-
 class SpiExtensionFactoryTest {
     @Test
     fun getExtensionTest() {

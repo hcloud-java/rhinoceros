@@ -9,5 +9,4 @@ tasks.getByName<Jar>("jar") {
 }
 
 dependencies {
-
 }

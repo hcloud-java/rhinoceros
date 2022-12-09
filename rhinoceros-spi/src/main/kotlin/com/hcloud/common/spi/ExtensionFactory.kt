@@ -1,6 +1,5 @@
 package com.hcloud.common.spi
 
-
 @SPI("spi")
 interface ExtensionFactory {
 

@@ -9,8 +9,8 @@ tasks.getByName<Jar>("jar") {
 }
 
 dependencies {
+    api(project(":rhinoceros-spi"))
     implementation("org.springframework.boot:spring-boot-autoconfigure")
-    implementation("org.slf4j:slf4j-api:2.0.5")
     api("com.alibaba.fastjson2:fastjson2:2.0.20")
     implementation("org.apache.skywalking:apm-toolkit-trace:8.13.0")
     implementation("com.alibaba:transmittable-thread-local:2.14.2")

@@ -4,8 +4,8 @@ import io.micrometer.core.instrument.Meter
 import io.micrometer.core.instrument.MeterRegistry
 import io.micrometer.core.instrument.config.MeterFilter
 import io.micrometer.core.instrument.distribution.DistributionStatisticConfig
-import org.springframework.boot.actuate.autoconfigure.metrics.MeterRegistryCustomizer
 import java.time.Duration
+import org.springframework.boot.actuate.autoconfigure.metrics.MeterRegistryCustomizer
 
 object Matrix {
 
@@ -30,9 +30,9 @@ object Matrix {
                             .minimumExpectedValue(Duration.ofMillis(1).toNanos().toDouble())
                             .maximumExpectedValue(Duration.ofSeconds(5).toNanos().toDouble())
                             .build()
-                            .merge(config);
+                            .merge(config)
                     } else {
-                        config;
+                        config
                     }
                 }
             })

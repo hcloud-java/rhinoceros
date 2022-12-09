@@ -22,5 +22,4 @@ open class OssAutoConfiguration(private val properties: OssProperties) {
     open fun ossEndpoint(template: OssTemplate): OssEndpoint {
         return OssEndpoint(template)
     }
-
 }

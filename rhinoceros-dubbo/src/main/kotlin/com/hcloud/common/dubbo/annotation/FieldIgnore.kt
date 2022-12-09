@@ -6,4 +6,4 @@ import java.lang.annotation.Inherited
 @Target(AnnotationTarget.FIELD)
 @Inherited
 @MustBeDocumented
-annotation class  FieldIgnore()
+annotation class FieldIgnore()

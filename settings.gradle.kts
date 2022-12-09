@@ -4,7 +4,7 @@ rootProject.name = "rhinoceros"
 rootProject.buildFileName = "build.gradle.kts"
 
 val projectSymbol = "/src"
-val projects = HashSet<String>();
+val projects = HashSet<String>()
 
 settingsDir.listFiles()!!.filter { it.isDirectory }.stream().flatMap {
     java.nio.file.Files.walk(Paths.get(it.canonicalPath))

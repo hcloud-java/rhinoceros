@@ -11,12 +11,11 @@ import com.amazonaws.services.s3.AmazonS3Client
 import com.amazonaws.services.s3.model.*
 import com.amazonaws.util.IOUtils
 import com.hcloud.common.oss.OssProperties
-import org.springframework.beans.factory.InitializingBean
 import java.io.ByteArrayInputStream
 import java.io.InputStream
 import java.util.*
 import java.util.stream.Collectors
-
+import org.springframework.beans.factory.InitializingBean
 
 class OssTemplate(private val ossProperties: OssProperties) : InitializingBean {
 
@@ -117,10 +116,7 @@ class OssTemplate(private val ossProperties: OssProperties) : InitializingBean {
      * API Documentation](http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObject)
      */
     @Throws(Exception::class)
-    fun putObject(
-        bucketName: String?, objectName: String?, stream: InputStream?, size: Long,
-        contextType: String?
-    ): PutObjectResult? {
+    fun putObject(bucketName: String?, objectName: String?, stream: InputStream?, size: Long, contextType: String?): PutObjectResult? {
         val objectMetadata = ObjectMetadata()
         objectMetadata.contentLength = size
         objectMetadata.contentType = contextType
@@ -189,5 +185,4 @@ class OssTemplate(private val ossProperties: OssProperties) : InitializingBean {
             .withClientConfiguration(clientConfiguration).withCredentials(awsCredentialsProvider)
             .disableChunkedEncoding().withPathStyleAccessEnabled(ossProperties.pathStyleAccess).build()
     }
-
 }

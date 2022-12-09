@@ -1,12 +1,13 @@
 package com.hcloud.common.spi
 
-import org.apache.commons.lang3.StringUtils
-import org.slf4j.LoggerFactory
 import java.io.IOException
 import java.net.URL
 import java.util.*
 import java.util.concurrent.ConcurrentHashMap
+import org.apache.commons.lang3.StringUtils
+import org.slf4j.LoggerFactory
 
+@Suppress("UNCHECKED_CAST")
 class ExtensionLoader<T> {
     private var log = LoggerFactory.getLogger(ExtensionLoader::class.java)
 
@@ -20,7 +21,6 @@ class ExtensionLoader<T> {
      * 扩展接口 [Class]
      */
     private val tClass: Class<T>
-
 
     /**
      * 保存 "扩展" 实现的 [Class]
@@ -48,7 +48,6 @@ class ExtensionLoader<T> {
             getExtensionLoader(ExtensionFactory::class.java).getExtensionClasses()
         }
     }
-
 
     fun getDefaultJoin(): T? {
         getExtensionClasses()
@@ -83,7 +82,7 @@ class ExtensionLoader<T> {
                 }
             }
         }
-        return value as T?
+        return value
     }
 
     private fun createExtension(cacheDefaultName: String?): T? {
@@ -94,7 +93,7 @@ class ExtensionLoader<T> {
         if (null == o) {
             try {
                 // 创建扩展对象并放到缓存中
-                joinInstances.putIfAbsent(aClass, aClass.newInstance())
+                joinInstances.putIfAbsent(aClass, aClass.getDeclaredConstructor().newInstance())
                 o = joinInstances[aClass]
             } catch (e: InstantiationException) {
                 e.printStackTrace()
@@ -132,7 +131,6 @@ class ExtensionLoader<T> {
             MAP.putIfAbsent(tClass, ExtensionLoader(tClass))
             return MAP[tClass] as ExtensionLoader<T>
         }
-
     }
 
     private fun getExtensionClasses(): Map<String?, Class<*>?>? {
@@ -154,7 +152,7 @@ class ExtensionLoader<T> {
 
     private fun loadExtensionClass(): Map<String?, Class<*>>? {
         // 扩展接口tClass，必须包含SPI注解
-        val annotation = tClass!!.getAnnotation(SPI::class.java)
+        val annotation = tClass.getAnnotation(SPI::class.java)
         if (null != annotation) {
             val v = annotation.value
             if (StringUtils.isNotBlank(v)) {
