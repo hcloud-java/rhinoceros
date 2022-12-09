@@ -19,7 +19,7 @@ configurations {
 
 allprojects {
     group = "com.hcloud"
-    version = "0.0.1-SNAPSHOT"
+    version = "1.0.0-SNAPSHOT"
 
     repositories {
         mavenCentral()
@@ -36,7 +36,7 @@ subprojects {
     tasks.withType<KotlinCompile> {
         kotlinOptions {
             freeCompilerArgs = listOf("-Xjsr305=strict")
-            jvmTarget = "1.8"
+            jvmTarget = "17"
         }
     }
 
@@ -48,6 +48,10 @@ subprojects {
         implementation("org.jetbrains.kotlin:kotlin-reflect")
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
         annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+
+        testImplementation("junit:junit:4.13.2")
+//        testImplementation("org.junit.jupiter:junit-jupiter-api")
+        testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
     }
 }
 

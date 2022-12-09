@@ -1,0 +1,2 @@
+testSPI1=com.hcloud.common.spi.TestSPI1impl
+testSPI2=com.hcloud.common.spi.TestSPI2impl
