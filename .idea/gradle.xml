@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/rhinoceros-core" />
             <option value="$PROJECT_DIR$/rhinoceros-dubbo" />
             <option value="$PROJECT_DIR$/rhinoceros-grpc" />
+            <option value="$PROJECT_DIR$/rhinoceros-netty" />
             <option value="$PROJECT_DIR$/rhinoceros-oss" />
             <option value="$PROJECT_DIR$/rhinoceros-prometheus" />
             <option value="$PROJECT_DIR$/rhinoceros-spi" />

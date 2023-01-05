@@ -6,4 +6,4 @@ import java.lang.annotation.Inherited
 @Target(AnnotationTarget.FUNCTION)
 @Inherited
 @MustBeDocumented
-annotation class LogMarker()
+annotation class LogMarker(val interfaceName: String = "", val businessDescription: String = "")
